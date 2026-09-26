@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Imperial Queen 🤍</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Dancing Script', cursive;
+      font-size: 2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    .carta {
+      overflow: hidden;
+      border-right: 0.15em solid white;
+      display: inline-block;
+      max-width: 100%;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+
+    @keyframes parpadeo {
+      from, to { border-color: transparent; }
+      50% { border-color: white; }
+    }
+  </style>
+</head>
+<body>
+  <div class="carta" id="carta">
+  </div>
+
+  <audio id="tecla" src="https://www.orangefreesounds.com/wp-content/uploads/2024/08/Typewriter-key-press-sound.mp3" preload="auto"></audio>
+
+  <script>
+    const textoCompleto = "         N.A.P.C 🖤🤍, No colocare el nombre por que, al estar alojado en la Web, mantener la identidad es lo mas importante, pero tú sabes que es para ti. Imperial Queen 🤍 A lo largo de mi vida jamás imaginé encontrar a alguien que llegara a ser tan importante para mí. Hubo momentos en que éramos un espejismo de felicidad y otros en que, sin querer, nos hacíamos creer que no nos importabamos. Sin embargo, desde el principio hubo una buena conexión que, al menos yo, no creo encontrar en otra persona… tu risa llenaba mis días y tus silencios, auch.... Al principio me costó la distancia, para ser sincero, duele no tenerte cerca. Aunque ya no formamos parte de la vida del otro como antes, no quería dejar pasar este día sin escribirte. No por compromiso, sino porque fuiste y sigues siendo una presencia profunda en mi corazón. Alguien profundamente importante para mí. Aunque el camino nos llevó por distintos rumbos, nunca he dejado de agradecer por haberte conocido. Me enseñaste muchas cosas, con tu intensidad y tu ternura extraña. Hubo un momento en que todo estaba bien y, de pronto, cambió de un día para otro. Y esto va para esa persona que un día fui tan afortunado de conocer: gracias por tu sinceridad, por tu alma transparente y por permitirme admirar tu luz. Siento no haber estado a la altura de tu grandeza; nací para contemplar astros, y tú, Impe 🤍, fuiste la más resplandeciente, tanto que te vi como una llama púrpura y blanca, hermosa y acogedora, pero capaz de herir letalmente, y todo tal vez sin que lo supieras. Obviamente, fue solo una idea, pero siempre se me hacia curioso que te encantara verte en los espejos de la casa; pensaba que tenías todo para hacerlo, ya que, después de ti, lo más bonito era tu reflejo. disculpa por traerlo pero tu primer amor tuvo la suerte de verte florecer; confieso que sentí celos y hoy algo de envidia por ese privilegio. con todo y que tenia los momentos asi fueran solo dos segundos a pesar de sonar a poco tiempo, eran finitos apenas dos segundos podía verte sonreír, rozar tu cabello y transformar mi día. Mis errores fueron dudar, sobrepensar y esperar sin actuar. Expresar lo que se siente no debería romper vínculos fuertes. Hoy, en tu cumpleaños, solo te deseo tu felicidad auténtica, dicha plena, mucha serenidad, proyectos que enciendan tu ilusión, personas que te valoren y motivos para sonreír cada amanecer. Cada recuerdo, todas tus risas y los pocos abrazos vivirán por siempre en lo más íntimo de mi ser. Feliz cumpleaños 🎇🎆🎂🎈🎉, Imperial Queen 🤍. Gracias por haber sido parte de mi historia y por permitirme ser parte de la tuya, aunque fuera por un tiempo. Te quiero mucho 11/06/2019 (no se si llegaras a entender la referencia) 🤍 Ah y déjame dormir 😅 ¿qué te escapaste De bombón? ¿De qué estuche divino?  un pedacito de Pareces ángel que se soltó de un cielo te lanzo un travieso  y un guiño beso. 🍫 Solo es una carta escrita especialmente para ti, con todo mi cariño... ATT: H.3.6.9";
+    const carta = document.getElementById('carta');
+    const tecla = document.getElementById('tecla');
+    let i = 0;
+
+    function escribir() {
+      if (i < textoCompleto.length) {
+        carta.textContent += textoCompleto.charAt(i);
+        tecla.currentTime = 0;
+        tecla.play();
+        i++;
+        setTimeout(escribir, 75);
+      } else {
+        carta.style.borderRight = 'none';
+      }
+    }
+
+    escribir();
+  </script>
+</body>
+</html>
